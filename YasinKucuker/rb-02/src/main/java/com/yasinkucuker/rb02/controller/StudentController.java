@@ -25,7 +25,7 @@ public class StudentController {
         return studentService.findStudentById(id);
     }
 
-    @GetMapping("/customers")
+    @GetMapping("/students")
     public List<Student> findAllStudents() {
         return studentService.findAllStudents();
     }

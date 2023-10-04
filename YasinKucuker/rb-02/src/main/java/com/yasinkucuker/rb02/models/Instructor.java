@@ -1,5 +1,6 @@
 package com.yasinkucuker.rb02.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.*;
@@ -14,7 +15,7 @@ public abstract class Instructor {
     private String address;
     private String phoneNumber;
 
-
+    @JsonBackReference
     @OneToMany(mappedBy = "instructor")
     private Set<Course> courseList = new HashSet<>();
 

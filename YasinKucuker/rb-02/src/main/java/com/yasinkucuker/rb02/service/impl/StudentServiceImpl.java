@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service("StudentServiceImpl")
-@Primary
+
 public class StudentServiceImpl implements StudentService {
     private final StudentRepository studentRepository;
 
@@ -21,7 +21,6 @@ public class StudentServiceImpl implements StudentService {
     public StudentServiceImpl(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
-
 
     public Student findStudentById(long id){
         System.out.println("Student is being searched...");

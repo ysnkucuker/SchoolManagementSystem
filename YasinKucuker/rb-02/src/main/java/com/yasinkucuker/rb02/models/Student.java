@@ -1,5 +1,6 @@
 package com.yasinkucuker.rb02.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -16,6 +17,7 @@ public class Student {
     private String address;
     private Enum gender;
 
+    @JsonManagedReference
     @ManyToMany
     private Set<Course> courseList = new HashSet<>();
     public Student(){

@@ -1,5 +1,6 @@
 package com.yasinkucuker.rb02.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.*;
@@ -13,6 +14,7 @@ public class Course {
     private int courseCode;
     private int courseScore;
 
+    @JsonBackReference
     @ManyToMany(mappedBy = "courseList")
     private Set<Student> studentList =new HashSet<>();
     @ManyToOne
