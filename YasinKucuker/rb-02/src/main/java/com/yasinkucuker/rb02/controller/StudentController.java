@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import static com.yasinkucuker.rb02.models.Gender.male;
+
 @RestController
 public class StudentController {
     @Qualifier("StudentServiceImpl")
@@ -29,4 +31,6 @@ public class StudentController {
     public List<Student> findAllStudents() {
         return studentService.findAllStudents();
     }
+
+
 }

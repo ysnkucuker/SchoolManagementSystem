@@ -32,4 +32,5 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> findAllStudents() {
         return studentRepository.findAll();
     }
+
 }
