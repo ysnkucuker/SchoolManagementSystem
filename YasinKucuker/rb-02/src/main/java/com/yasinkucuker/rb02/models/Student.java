@@ -8,6 +8,7 @@ import java.util.*;
 
 
 @Entity
+@Table(name = "studentable")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

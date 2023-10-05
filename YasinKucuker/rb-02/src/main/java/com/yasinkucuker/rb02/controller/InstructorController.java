@@ -5,9 +5,7 @@ import com.yasinkucuker.rb02.models.Student;
 import com.yasinkucuker.rb02.service.InstructorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +28,15 @@ public class InstructorController {
     @GetMapping("/instructors")
     public List<Instructor> findAllInstuctors() {
         return instructorService.findAllInstructors();
+    }
+
+    @PostMapping("/instructors")
+    public void SaveInstructor(Instructor instructor){
+        instructorService.SaveorUpdate(instructor);
+    }
+
+    @DeleteMapping("/instructors/{id}")
+    private void DeleteInstructor(@PathVariable long id){
+        instructorService.DeleteInstructor(id);
     }
 }

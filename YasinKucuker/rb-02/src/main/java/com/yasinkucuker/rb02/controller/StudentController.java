@@ -4,9 +4,7 @@ import com.yasinkucuker.rb02.models.Student;
 import com.yasinkucuker.rb02.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,5 +30,18 @@ public class StudentController {
         return studentService.findAllStudents();
     }
 
+    @PostMapping("/students")
+    public void SaveStudent(Student student){
+        studentService.SaveorUpdate(student);
+    }
 
+    @DeleteMapping("/students/{id}")
+    private void DeleteStudent(@PathVariable long id){
+        studentService.DeleteStudent(id);
+    }
+
+    @PutMapping("students/{id}")
+    public Student UpdateStudent(Student student, @PathVariable long id){
+        return studentService.UpdateStudent(student, id);
+    }
 }

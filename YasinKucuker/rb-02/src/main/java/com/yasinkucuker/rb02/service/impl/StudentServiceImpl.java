@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service("StudentServiceImpl")
 
@@ -29,8 +30,34 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public void SaveorUpdate(Student student) {
+        studentRepository.save(student);
+    }
+
+    @Override
+    public void DeleteStudent(Long id) {
+        studentRepository.deleteById(id);
+    }
+
+    @Override
+    public Student UpdateStudent(Student student, Long id) {
+        Student studentDB = studentRepository.findStudentById(id);
+        if(Objects.nonNull(studentDB.getName()) && !"".equalsIgnoreCase(studentDB.getName())){
+            studentDB.setName(student.getName());
+        }
+
+        if(Objects.nonNull(studentDB.getAddress()) && !"".equalsIgnoreCase(studentDB.getAddress())){
+            studentDB.setAddress(student.getAddress());
+        }
+
+        return studentRepository.save(studentDB);
+    }
+
+    @Override
     public List<Student> findAllStudents() {
         return studentRepository.findAll();
     }
+
+
 
 }

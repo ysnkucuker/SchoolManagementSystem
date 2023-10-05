@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service("InstructorServiceImpl")
 public class InstructorServiceImpl implements InstructorService {
@@ -25,5 +26,36 @@ public class InstructorServiceImpl implements InstructorService {
 
     public List<Instructor> findAllInstructors(){
         return instructorRepository.findAll();
+    }
+
+    @Override
+    public void SaveorUpdate(Instructor instructor) {
+        instructorRepository.save(instructor);
+    }
+
+    @Override
+    public void DeleteInstructor(Long id) {
+        instructorRepository.deleteById(id);
+    }
+
+    /*
+    @Override
+    public Instructor UpdateInstructor(Instructor instructor,Long id) {
+        Instructor instructorDB = instructorRepository.findInstructorById(id);
+        if(Objects.nonNull(instructorDB.getName()) && !"".equalsIgnoreCase(instructorDB.getName())){
+            instructorDB.setName(instructor.getName());
+        }
+
+        if(Objects.nonNull(instructorDB.getAddress()) && !"".equalsIgnoreCase(instructorDB.getAddress())){
+            instructorDB.setAddress(instructor.getAddress());
+        }
+
+        return instructorRepository.save(instructorDB);
+    }
+     */
+
+    @Override
+    public Instructor UpdateInstructor(Instructor instructor, Long id) {
+        return null;
     }
 }

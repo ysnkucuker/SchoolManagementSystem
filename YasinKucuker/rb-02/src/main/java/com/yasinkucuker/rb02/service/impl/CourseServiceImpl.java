@@ -2,6 +2,7 @@ package com.yasinkucuker.rb02.service.impl;
 
 
 import com.yasinkucuker.rb02.exception.CourseNotFoundException;
+import com.yasinkucuker.rb02.models.Student;
 import com.yasinkucuker.rb02.repository.CourseRepository;
 import com.yasinkucuker.rb02.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import com.yasinkucuker.rb02.models.Course;
 import com.yasinkucuker.rb02.service.CourseService;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service("CourseServiceImpl")
 public class CourseServiceImpl implements CourseService {
@@ -23,6 +25,21 @@ public class CourseServiceImpl implements CourseService {
     public Course findCourseById(long id){
         return courseRepository.findById(id)
                 .orElseThrow(() -> new CourseNotFoundException("Course not found with ID : " + id));
+    }
+
+    @Override
+    public void SaveorUpdate(Course course) {
+        courseRepository.save(course);
+    }
+
+    @Override
+    public void DeleteCourse(Long id) {
+        courseRepository.deleteById(id);
+    }
+
+    @Override
+    public Course UpdateCourse(Course course, Long id) {
+        return null;
     }
 
     @Override
