@@ -40,8 +40,4 @@ public class StudentController {
         studentService.DeleteStudent(id);
     }
 
-    @PutMapping("students/{id}")
-    public Student UpdateStudent(Student student, @PathVariable long id){
-        return studentService.UpdateStudent(student, id);
-    }
 }

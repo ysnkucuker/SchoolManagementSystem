@@ -13,5 +13,4 @@ public interface StudentService {
 
     void DeleteStudent(Long id);
 
-    Student UpdateStudent(Student student, Long id);
 }

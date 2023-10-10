@@ -40,20 +40,6 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student UpdateStudent(Student student, Long id) {
-        Student studentDB = studentRepository.findStudentById(id);
-        if(Objects.nonNull(studentDB.getName()) && !"".equalsIgnoreCase(studentDB.getName())){
-            studentDB.setName(student.getName());
-        }
-
-        if(Objects.nonNull(studentDB.getAddress()) && !"".equalsIgnoreCase(studentDB.getAddress())){
-            studentDB.setAddress(student.getAddress());
-        }
-
-        return studentRepository.save(studentDB);
-    }
-
-    @Override
     public List<Student> findAllStudents() {
         return studentRepository.findAll();
     }

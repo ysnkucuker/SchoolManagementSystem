@@ -38,24 +38,4 @@ public class InstructorServiceImpl implements InstructorService {
         instructorRepository.deleteById(id);
     }
 
-    /*
-    @Override
-    public Instructor UpdateInstructor(Instructor instructor,Long id) {
-        Instructor instructorDB = instructorRepository.findInstructorById(id);
-        if(Objects.nonNull(instructorDB.getName()) && !"".equalsIgnoreCase(instructorDB.getName())){
-            instructorDB.setName(instructor.getName());
-        }
-
-        if(Objects.nonNull(instructorDB.getAddress()) && !"".equalsIgnoreCase(instructorDB.getAddress())){
-            instructorDB.setAddress(instructor.getAddress());
-        }
-
-        return instructorRepository.save(instructorDB);
-    }
-     */
-
-    @Override
-    public Instructor UpdateInstructor(Instructor instructor, Long id) {
-        return null;
-    }
 }

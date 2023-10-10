@@ -31,7 +31,7 @@ public class InstructorController {
     }
 
     @PostMapping("/instructors")
-    public void SaveInstructor(Instructor instructor){
+    public void SaveorUpdateInstructor(Instructor instructor){
         instructorService.SaveorUpdate(instructor);
     }
 
