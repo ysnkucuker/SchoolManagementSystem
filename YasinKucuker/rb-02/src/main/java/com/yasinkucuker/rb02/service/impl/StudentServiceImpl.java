@@ -40,6 +40,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public Student UpdateStudent(Student student) {
+        return studentRepository.save(student);
+    }
+
+    @Override
     public List<Student> findAllStudents() {
         return studentRepository.findAll();
     }

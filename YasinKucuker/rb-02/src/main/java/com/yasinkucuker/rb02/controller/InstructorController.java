@@ -30,6 +30,10 @@ public class InstructorController {
         return instructorService.findAllInstructors();
     }
 
+    @PutMapping("/instructors")
+    public Instructor UpdateInstructor(Instructor instructor){
+        return instructorService.UpdateInstructor(instructor);
+    }
     @PostMapping("/instructors")
     public void SaveorUpdateInstructor(Instructor instructor){
         instructorService.SaveorUpdate(instructor);

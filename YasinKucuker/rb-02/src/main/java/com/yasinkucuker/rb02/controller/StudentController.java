@@ -35,9 +35,14 @@ public class StudentController {
         studentService.SaveorUpdate(student);
     }
 
+    @PutMapping("/students")
+    public Student UpdateStudent(Student student){
+        return studentService.UpdateStudent(student);
+    }
     @DeleteMapping("/students/{id}")
     private void DeleteStudent(@PathVariable long id){
         studentService.DeleteStudent(id);
     }
+
 
 }

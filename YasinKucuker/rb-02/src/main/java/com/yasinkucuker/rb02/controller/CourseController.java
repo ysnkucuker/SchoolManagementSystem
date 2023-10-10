@@ -34,8 +34,13 @@ public class CourseController {
         courseService.SaveorUpdate(course);
     }
 
+    @PutMapping("/courses")
+    public Course UpdateCourse(@RequestBody Course course){
+        return courseService.UpdateCourse(course);
+    }
+
     @DeleteMapping("/courses/{id}")
-    private void DeleteCourse(@PathVariable long id){
-        courseService.DeleteCourse(id);
+    public void DeleteCourse(@PathVariable long id){
+        courseService.deleteCourse(id);
     }
 }

@@ -38,4 +38,9 @@ public class InstructorServiceImpl implements InstructorService {
         instructorRepository.deleteById(id);
     }
 
+    @Override
+    public Instructor UpdateInstructor(Instructor instructor) {
+        return instructorRepository.save(instructor);
+    }
+
 }

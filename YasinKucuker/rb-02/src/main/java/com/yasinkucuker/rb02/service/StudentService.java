@@ -1,5 +1,6 @@
 package com.yasinkucuker.rb02.service;
 
+import com.yasinkucuker.rb02.models.Course;
 import com.yasinkucuker.rb02.models.Student;
 
 import java.sql.Struct;
@@ -11,6 +12,8 @@ public interface StudentService {
 
     void SaveorUpdate(Student student);
 
+
     void DeleteStudent(Long id);
 
+    Student UpdateStudent(Student student);
 }
