@@ -31,16 +31,16 @@ public class InstructorController {
     }
 
     @PutMapping("/instructors")
-    public Instructor UpdateInstructor(Instructor instructor){
-        return instructorService.UpdateInstructor(instructor);
+    public Instructor updateInstructor(Instructor instructor){
+        return instructorService.updateInstructor(instructor);
     }
     @PostMapping("/instructors")
-    public void SaveorUpdateInstructor(Instructor instructor){
-        instructorService.SaveorUpdate(instructor);
+    public void saveorUpdateInstructor(Instructor instructor){
+        instructorService.saveorUpdate(instructor);
     }
 
     @DeleteMapping("/instructors/{id}")
-    private void DeleteInstructor(@PathVariable long id){
-        instructorService.DeleteInstructor(id);
+    private void deleteInstructor(@PathVariable long id){
+        instructorService.deleteInstructor(id);
     }
 }

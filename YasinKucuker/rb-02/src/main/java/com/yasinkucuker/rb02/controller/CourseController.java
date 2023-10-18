@@ -30,17 +30,17 @@ public class CourseController {
     }
 
     @PostMapping("/courses")
-    public void SaveCourse(Course course){
-        courseService.SaveorUpdate(course);
+    public void saveCourse(Course course){
+        courseService.saveorUpdate(course);
     }
 
     @PutMapping("/courses")
-    public Course UpdateCourse(@RequestBody Course course){
-        return courseService.UpdateCourse(course);
+    public Course updateCourse(@RequestBody Course course){
+        return courseService.updateCourse(course);
     }
 
     @DeleteMapping("/courses/{id}")
-    public void DeleteCourse(@PathVariable long id){
+    public void deleteCourse(@PathVariable long id){
         courseService.deleteCourse(id);
     }
 }

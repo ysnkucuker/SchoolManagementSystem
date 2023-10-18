@@ -8,9 +8,9 @@ import java.util.List;
 public interface InstructorService {
     List<Instructor> findAllInstructors();
     Instructor findInstructorById(long id);
-    void SaveorUpdate(Instructor instructor);
+    void saveorUpdate(Instructor instructor);
 
-    void DeleteInstructor(Long id);
+    void deleteInstructor(Long id);
 
-    Instructor UpdateInstructor(Instructor instructor);
+    Instructor updateInstructor(Instructor instructor);
 }

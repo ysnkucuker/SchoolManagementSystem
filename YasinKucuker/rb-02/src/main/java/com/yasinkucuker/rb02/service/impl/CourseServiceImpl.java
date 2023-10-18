@@ -28,7 +28,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public void SaveorUpdate(Course course) {
+    public void saveorUpdate(Course course) {
         courseRepository.save(course);
     }
 
@@ -39,7 +39,7 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public Course UpdateCourse(Course course) {
+    public Course updateCourse(Course course) {
         return courseRepository.save(course);
     }
 

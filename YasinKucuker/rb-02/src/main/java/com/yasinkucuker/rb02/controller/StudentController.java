@@ -31,17 +31,17 @@ public class StudentController {
     }
 
     @PostMapping("/students")
-    public void SaveStudent(Student student){
-        studentService.SaveorUpdate(student);
+    public void saveStudent(Student student){
+        studentService.saveorUpdate(student);
     }
 
     @PutMapping("/students")
-    public Student UpdateStudent(Student student){
-        return studentService.UpdateStudent(student);
+    public Student updateStudent(Student student){
+        return studentService.updateStudent(student);
     }
     @DeleteMapping("/students/{id}")
-    private void DeleteStudent(@PathVariable long id){
-        studentService.DeleteStudent(id);
+    private void deleteStudent(@PathVariable long id){
+        studentService.deleteStudent(id);
     }
 
 

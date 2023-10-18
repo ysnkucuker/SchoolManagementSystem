@@ -10,10 +10,10 @@ public interface StudentService {
     List<Student> findAllStudents();
     Student findStudentById(long id);
 
-    void SaveorUpdate(Student student);
+    void saveorUpdate(Student student);
 
 
-    void DeleteStudent(Long id);
+    void deleteStudent(Long id);
 
-    Student UpdateStudent(Student student);
+    Student updateStudent(Student student);
 }

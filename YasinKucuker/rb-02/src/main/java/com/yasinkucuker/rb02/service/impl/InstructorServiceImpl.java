@@ -29,17 +29,17 @@ public class InstructorServiceImpl implements InstructorService {
     }
 
     @Override
-    public void SaveorUpdate(Instructor instructor) {
+    public void saveorUpdate(Instructor instructor) {
         instructorRepository.save(instructor);
     }
 
     @Override
-    public void DeleteInstructor(Long id) {
+    public void deleteInstructor(Long id) {
         instructorRepository.deleteById(id);
     }
 
     @Override
-    public Instructor UpdateInstructor(Instructor instructor) {
+    public Instructor updateInstructor(Instructor instructor) {
         return instructorRepository.save(instructor);
     }
 
